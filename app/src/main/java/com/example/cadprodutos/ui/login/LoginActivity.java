@@ -25,12 +25,15 @@ import android.widget.Toast;
 
 import com.example.cadprodutos.MainActivity;
 import com.example.cadprodutos.R;
+import com.example.cadprodutos.UserRegister;
 import com.example.cadprodutos.ui.login.LoginViewModel;
 import com.example.cadprodutos.ui.login.LoginViewModelFactory;
 
 public class LoginActivity extends AppCompatActivity {
 
     private LoginViewModel loginViewModel;
+
+    EditText email,password;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -42,7 +45,11 @@ public class LoginActivity extends AppCompatActivity {
         final EditText usernameEditText = findViewById(R.id.username);
         final EditText passwordEditText = findViewById(R.id.password);
         final Button loginButton = findViewById(R.id.login);
+        final Button registerButton = findViewById(R.id.btn_Register);
         final ProgressBar loadingProgressBar = findViewById(R.id.loading);
+
+        email = (EditText) findViewById(R.id.username);
+        password = (EditText) findViewById(R.id.password);
 
         loginViewModel.getLoginFormState().observe(this, new Observer<LoginFormState>() {
             @Override
@@ -117,7 +124,15 @@ public class LoginActivity extends AppCompatActivity {
                 loadingProgressBar.setVisibility(View.VISIBLE);
                 loginViewModel.login(usernameEditText.getText().toString(),
                         passwordEditText.getText().toString());
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    startActivity(intent);
+            }
+        });
+
+        registerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, UserRegister.class);
                 startActivity(intent);
             }
         });

@@ -13,7 +13,7 @@ import com.example.cadprodutos.model.Safra;
 
 public class FormularioProdutos extends AppCompatActivity {
     EditText editText_variedade, editText_hectares, editText_plantio, editText_sacasSemente, editText_valorSacaSemente, editText_sacasFert, editText_valorSacaFert;
-    Button btn_Poliform;
+    Button btn_Poliform, btn_Cancel;
     Safra editarSafra, safra; // crio uma variável produto para ter acesso aos get e set
     SafrasBd bdHelper; //Instância do banco de dados
 
@@ -28,6 +28,7 @@ public class FormularioProdutos extends AppCompatActivity {
         Intent intent = getIntent();
         editarSafra = (Safra) intent.getSerializableExtra("safra-escolhida");
 
+        //Pega os valores dos inputs
         editText_variedade = (EditText) findViewById(R.id.editText_variedade);
         editText_hectares = (EditText) findViewById(R.id.editText_hectares);
         editText_plantio = (EditText) findViewById(R.id.editText_plantio);
@@ -37,6 +38,7 @@ public class FormularioProdutos extends AppCompatActivity {
         editText_valorSacaFert = (EditText) findViewById(R.id.editText_valorSacaFert);
 
         btn_Poliform = (Button) findViewById(R.id.btn_Poliform);
+        btn_Cancel = (Button) findViewById(R.id.btn_Cancel);
 
 //        Altera o nome do botão de cadastro de safra para Modificar caso esteja editando uma safra
         if(editarSafra != null){
@@ -74,6 +76,16 @@ public class FormularioProdutos extends AppCompatActivity {
                     bdHelper.alterarSafra(safra);
                     bdHelper.close();
                 }
+                Intent intent = new Intent(FormularioProdutos.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btn_Cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(FormularioProdutos.this, MainActivity.class);
+                startActivity(intent);
             }
         });
     }

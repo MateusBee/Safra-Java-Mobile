@@ -4,94 +4,69 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FormularioProdutos">
+    tools:context=".UserRegister">
 
     <LinearLayout
         android:layout_width="409dp"
         android:layout_height="729dp"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp">
+        tools:layout_editor_absoluteY="1dp"
+        tools:ignore="MissingConstraints">
 
         <EditText
-            android:id="@+id/editText_variedade"
+            android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:ems="15"
-            android:hint="Variedade"
+            android:hint="Nome"
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/editText_hectares"
+            android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:ems="10"
-            android:hint="Hectares"
+            android:hint="Email"
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/editText_plantio"
+            android:id="@+id/senha"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:ems="10"
-            android:hint="Data de Plantio"
-            android:inputType="textPersonName" />
+            android:hint="Senha"
+            android:inputType="textPassword" />
 
         <EditText
-            android:id="@+id/editText_sacasSemente"
+            android:id="@+id/conf_senha"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:ems="10"
-            android:hint="Sacas de Semente"
-            android:inputType="textPersonName" />
+            android:hint="Confirmar senha"
+            android:inputType="textPassword" />
 
-        <EditText
-            android:id="@+id/editText_valorSacaSemente"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:ems="10"
-            android:hint="Valor por Saca"
-            android:inputType="textPersonName" />
-
-        <EditText
-            android:id="@+id/editText_sacasFert"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:ems="10"
-            android:hint="Sacas de Fertilizante"
-            android:inputType="textPersonName" />
-
-        <EditText
-            android:id="@+id/editText_valorSacaFert"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:ems="10"
-            android:hint="Valor por Saca"
-            android:inputType="textPersonName" />
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <Button
-                android:id="@+id/btn_Poliform"
+                android:id="@+id/btn_register"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:backgroundTint="#5ED363"
                 android:textColor="#FFF"
-                android:text="Salvar" />
+                android:text="Registrar-se" />
 
             <Button
-                android:id="@+id/btn_Cancel"
+                android:id="@+id/btn_cancel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="12dp"
@@ -99,19 +74,11 @@
                 android:textSize="14dp"
                 android:textColor="#FFF"
                 android:backgroundTint="#A9A9A9"
-                android:layout_toStartOf="@id/btn_Poliform"
-                android:layout_toLeftOf="@id/btn_Poliform"
+                android:layout_toStartOf="@id/btn_register"
+                android:layout_toLeftOf="@id/btn_register"
                 android:text="Voltar" />
         </RelativeLayout>
 
-<!--        <Button-->
-<!--            android:id="@+id/btn_Poliform"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="15dp"-->
-<!--            android:background="#5ED363"-->
-<!--            android:text="Salvar"-->
-<!--            android:textAlignment="center"-->
-<!--            android:textColor="#FFFFFF" />-->
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
